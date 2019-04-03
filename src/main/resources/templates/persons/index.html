@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Content Configuration</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/resource/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" align="center" style="margin-top: 50px;">
+            <h1>List of Persons</h1>            
+        </div>
+        
+        <div id="listPersons">
+		    <table class="table table-hover">
+		        <thead>
+		        <tr>
+		            <th>Name</th>
+		            <th>email</th>
+		        </tr>
+		        </thead>
+		        <tr th:each="person : ${persons}">
+		            <td> <span th:text="${person.name}"></span> </td>
+		            <td> <span th:text="${person.email}"></span> </td>
+		        </tr>
+		    </table>
+		</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" th:src="@{/resource/bootstrap/js/bootstrap.min.js}"></script>
+    
+</body>
+</html>
